@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Sensor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
-
-    // Update is called once per frame
+    private float limiteDerecha = 17;
     void Update()
     {
-        
+        if (transform.position.x >= limiteDerecha) 
+        {
+            Destroy(gameObject);    
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Destroy(gameObject);
-    }
+    
 
 
 
