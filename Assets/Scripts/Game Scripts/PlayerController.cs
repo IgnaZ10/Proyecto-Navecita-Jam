@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public float velocity = 3f;
     private Rigidbody2D rb;
-    public GameObject Bullet;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,12 +24,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up * velocity;
-            GameObject bala = Instantiate(Bullet);
+            
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+    
 }
