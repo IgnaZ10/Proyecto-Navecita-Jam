@@ -20,9 +20,6 @@ public class Proyectil : MonoBehaviour
             other.GetComponent<Enemigo>().TomarDaño(daño);
             Destroy(gameObject);
         }
-        else 
-        {
-
-        }
+        
     }
 }
