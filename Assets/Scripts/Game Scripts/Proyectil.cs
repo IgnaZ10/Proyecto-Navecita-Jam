@@ -15,10 +15,14 @@ public class Proyectil : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemigo")) 
+        if (other.CompareTag("Enemigo"))
         {
             other.GetComponent<Enemigo>().TomarDaño(daño);
             Destroy(gameObject);
+        }
+        else 
+        {
+
         }
     }
 }
