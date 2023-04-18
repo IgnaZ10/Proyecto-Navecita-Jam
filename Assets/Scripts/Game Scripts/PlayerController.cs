@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameIsPaused) return; // Ignorar Input si el juego está pausado
+
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up * velocity;

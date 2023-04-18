@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameDifficulty currentDificulty { get; private set; }
     public bool gameIsPaused { get; private set; }
 
     public delegate void GameManagerAction();
@@ -9,14 +10,8 @@ public class GameManager : MonoBehaviour
     public static event GameManagerAction OnGameResume;
 
     public static GameManager Instance;
-    void Start()
-    {
-        gameIsPaused = false;
-        Time.timeScale = 1;
-    }
     void Awake()
     {
-        #region Singleton
         if (Instance == null)
         {
             Instance = this;
@@ -25,8 +20,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        #endregion
 
+    }
+    void Start()
+    {
+        gameIsPaused = false;
+        Time.timeScale = 1;
+        SetDifficulty(GameDifficulty.VeryEasy);
     }
     void Update()
     {
@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
+    }
+    public void SetDifficulty(GameDifficulty newValue)
+    {
+        currentDificulty = newValue;
     }
     public void PauseGame()
     {
@@ -55,4 +59,16 @@ public class GameManager : MonoBehaviour
             OnGameResume();
         }
     }
+}
+
+/// <summary>
+/// Indica el nivel de dificultad del juego. Sirve para que los Spawners generen distintos tipos de obstáculos.
+/// </summary>
+public enum GameDifficulty
+{
+    VeryEasy = 0,
+    Easy = 1,
+    Medium = 2,
+    Hard = 3,
+    VeryHard = 4
 }

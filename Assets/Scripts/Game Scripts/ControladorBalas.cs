@@ -9,6 +9,8 @@ public class ControladorBalas : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.gameIsPaused) return; // Ignorar Input si el juego está pausado
+
         if (Input.GetMouseButtonDown(0)) 
         {
             Disparar();
