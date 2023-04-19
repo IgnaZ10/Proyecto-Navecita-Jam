@@ -4,10 +4,12 @@ public class GameManager : MonoBehaviour
 {
     public GameDifficulty currentDificulty { get; private set; }
     public bool gameIsPaused { get; private set; }
+    public bool gameIsOver { get; private set; }
 
     public delegate void GameManagerAction();
     public static event GameManagerAction OnGamePause;
     public static event GameManagerAction OnGameResume;
+    public static event GameManagerAction OnGameOver;
 
     public static GameManager Instance;
     void Awake()
@@ -20,17 +22,17 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
     void Start()
     {
         gameIsPaused = false;
+        gameIsOver = false;
         Time.timeScale = 1;
         SetDifficulty(GameDifficulty.VeryEasy);
     }
     void Update()
     {
-        if (!gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
+        if (!gameIsOver && !gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
         }
@@ -57,6 +59,15 @@ public class GameManager : MonoBehaviour
         if (OnGameResume != null)
         {
             OnGameResume();
+        }
+    }
+    public void LoseGame()
+    {
+        gameIsOver = true;
+        Debug.Log("<color=red>Game Over!</color>");
+        if (OnGameOver != null)
+        {
+            OnGameOver();
         }
     }
 }

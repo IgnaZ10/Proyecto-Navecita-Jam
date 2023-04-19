@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PauseMenuLogic : MonoBehaviour
 {
     [SerializeField] Canvas pauseMenuCanvas;
+    [SerializeField] Canvas hudCanvas;
     [SerializeField] Selectable resumeButton;
 
     bool inAnimation;
@@ -33,6 +34,7 @@ public class PauseMenuLogic : MonoBehaviour
     {
         if (inAnimation) return;
         pauseMenuCanvas.gameObject.SetActive(true);
+        hudCanvas.gameObject.SetActive(false);
         anim.Play("pausemenu_open");
         if (storedCoroutine != null) StopCoroutine(storedCoroutine);
         storedCoroutine = StartCoroutine(WaitForMenuOpen());
@@ -46,6 +48,7 @@ public class PauseMenuLogic : MonoBehaviour
 
         GameManager.Instance.ResumeGame();
         pauseMenuCanvas.gameObject.SetActive(false);
+        hudCanvas.gameObject.SetActive(true);
         inAnimation = false;
     }
     IEnumerator WaitForMenuOpen()

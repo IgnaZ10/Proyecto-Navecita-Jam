@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class ControladorBalas : MonoBehaviour
 {
@@ -13,6 +10,7 @@ public class ControladorBalas : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.gameIsPaused) return; // Ignorar Input si el juego está pausado
+        if (GameManager.Instance.gameIsOver) return;
 
         if (Input.GetMouseButtonDown(0)) 
         {

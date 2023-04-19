@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
     [SerializeField] private AudioSource _musicSource, _SFXSource;
-    private void Awake()
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] GameSettings settings;
+
+    public static SoundManager Instance;
+    void Awake()
     {
         if (Instance == null)
         {
@@ -17,9 +19,14 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Start()
+    {
+        audioMixer.SetFloat("VolumeEffects", settings.volumeEffects);
+        audioMixer.SetFloat("VolumeMusic", settings.volumeMusic);
+        audioMixer.SetFloat("VolumeMaster", settings.volumeMaster);
+    }
     public void PlaySound(AudioClip clip)
     {
         _SFXSource.PlayOneShot(clip);
-    
     }
 }

@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    private int currentScore;
+    private float currentScore;
+    [SerializeField] private float pointsPerSecond;
+
+    [Header("UI")]
+    [SerializeField] Text scoreText;
 
     [Header("Puntuaciones objetivo para cambiar dificultad")]
     [SerializeField] private int scoreToEasy; // Al llegar a esta puntuación, cambiar la dificultad desde "Very Easy" a "Easy".
@@ -12,8 +17,9 @@ public class ScoreCounter : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance.gameIsPaused) return;
-        
-        currentScore += Mathf.CeilToInt(Time.deltaTime);
+
+        currentScore += Time.deltaTime * pointsPerSecond;
+        scoreText.text = "Score: " + Mathf.FloorToInt(currentScore);
 
         if (currentScore > scoreToVeryHard) GameManager.Instance.SetDifficulty(GameDifficulty.VeryHard);
         else if (currentScore > scoreToHard) GameManager.Instance.SetDifficulty(GameDifficulty.Hard);
