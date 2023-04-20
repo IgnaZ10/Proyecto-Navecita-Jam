@@ -18,7 +18,7 @@ public class ScoreCounter : MonoBehaviour
     {
         if (GameManager.Instance.gameIsPaused) return;
 
-        currentScore += Time.deltaTime * pointsPerSecond;
+        
         scoreText.text = "Score: " + Mathf.FloorToInt(currentScore);
 
         if (currentScore > scoreToVeryHard) GameManager.Instance.SetDifficulty(GameDifficulty.VeryHard);
