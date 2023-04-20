@@ -6,6 +6,7 @@ public class Enemigo : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public float vida;
+    public int puntos = 10;
     private ScoreCounter scoreCounter;
 
     private void Start()
@@ -24,7 +25,8 @@ public class Enemigo : MonoBehaviour
     public void Muerte() 
     {
         Destroy(gameObject);
-        scoreCounter.AddScore(10);
+        scoreCounter.AddScore(puntos);
+        
     }
     
 }

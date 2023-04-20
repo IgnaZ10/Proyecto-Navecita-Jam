@@ -2439,7 +2439,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -2625,6 +2625,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853249515}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853249515}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1061446660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,7 +2807,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -2894,6 +2926,38 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 624051608}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 624051608}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3309,8 +3373,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Artwork:<size= 28>\n - Diego D\xEDaz\n - Mateo Vicencio\n - Martina Hevilla\n</size>\nSound:<size=
-    28>\n - Santiago Fernandez\n</size>\nProgramming:<size= 28>\n - Facundo Fuente\n
-    - Ignacio Rodriguez\n - Guillermo Ramirez\n</size>"
+    28>\n - Santiago Fernandez\n</size>\nProgramming:<size= 28>\n - Facundo Fuente\n-
+    Ignacio Rodriguez\n - Guillermo Ramirez\n</size>"
 --- !u!222 &1185660751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3613,6 +3677,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 845523395}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 845523395}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1231499666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3642,7 +3738,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -3978,7 +4074,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -4109,6 +4205,38 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 658667646}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 658667646}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4375,7 +4503,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -4482,6 +4610,38 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213830447}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213830447}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4680,7 +4840,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 776d3fbfc22b5df44a1c4d69d60eed53, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fb035da592350ab489e257ab94cdc27e, type: 3}
@@ -4787,6 +4947,38 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 243544976}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToBlack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 243544976}
+          m_TargetAssemblyTypeName: TextColorSwapper, Assembly-CSharp
+          m_MethodName: SetToWhite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
