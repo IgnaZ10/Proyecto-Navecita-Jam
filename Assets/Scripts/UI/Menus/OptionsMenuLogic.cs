@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class OptionsMenuLogic : MonoBehaviour
 {
-    [SerializeField] GameSettings settings;
+    [SerializeField] GameData settings;
 
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Slider sliderMaster;

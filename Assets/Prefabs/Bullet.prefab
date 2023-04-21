@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7230864185875301390}
   - component: {fileID: -8618269735052390158}
   - component: {fileID: 8487219830905854453}
+  - component: {fileID: 2240964403445424736}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 10
   "da\xF1o": 20
-  tiempo: 3
+  tiempo: 1.56
 --- !u!50 &8487219830905854453
 Rigidbody2D:
   serializedVersion: 4
@@ -139,3 +140,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &2240964403445424736
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200037476910588480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2eb80df67adeec44b9f4bfbb5dac0d84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

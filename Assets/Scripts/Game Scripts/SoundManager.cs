@@ -5,7 +5,7 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _musicSource, _SFXSource;
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] GameSettings settings;
+    [SerializeField] GameData settings;
 
     public static SoundManager Instance;
     void Awake()

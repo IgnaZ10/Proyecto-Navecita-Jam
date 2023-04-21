@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class PauseMenuLogic : MonoBehaviour
 {
-    [SerializeField] Canvas pauseMenuCanvas;
-    [SerializeField] Canvas hudCanvas;
-    [SerializeField] Selectable resumeButton;
+    [SerializeField] private Canvas pauseMenuCanvas;
+    [SerializeField] private Selectable resumeButton;
 
-    bool inAnimation;
-    Animator anim;
-    Coroutine storedCoroutine;
+    private bool waitingForAnimation;
+    private Animator animator;
+    private Coroutine storedCoroutine;
+
     void Awake()
     {
-        anim = pauseMenuCanvas.gameObject.GetComponent<Animator>();
+        animator = pauseMenuCanvas.gameObject.GetComponent<Animator>();
     }
     void OnEnable()
     {
@@ -25,40 +25,40 @@ public class PauseMenuLogic : MonoBehaviour
     }
     public void HideMenu()
     {
-        if (inAnimation) return;
-        anim.Play("pausemenu_close");
+        if (waitingForAnimation) return;
+
+        animator.Play("pausemenu_close");
         if (storedCoroutine != null) StopCoroutine(storedCoroutine);
         storedCoroutine = StartCoroutine(WaitForMenuClose());
     }
     void ShowMenu()
     {
-        if (inAnimation) return;
+        if (waitingForAnimation) return;
+
         pauseMenuCanvas.gameObject.SetActive(true);
-        hudCanvas.gameObject.SetActive(false);
-        anim.Play("pausemenu_open");
+        animator.Play("pausemenu_open");
         if (storedCoroutine != null) StopCoroutine(storedCoroutine);
         storedCoroutine = StartCoroutine(WaitForMenuOpen());
     }
     IEnumerator WaitForMenuClose()
     {
-        inAnimation = true;
-        AnimationClip currentClip = anim.GetCurrentAnimatorClipInfo(0)[0].clip;
+        waitingForAnimation = true;
+        AnimationClip currentClip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
 
         yield return new WaitForSecondsRealtime(currentClip.length);
 
         GameManager.Instance.ResumeGame();
         pauseMenuCanvas.gameObject.SetActive(false);
-        hudCanvas.gameObject.SetActive(true);
-        inAnimation = false;
+        waitingForAnimation = false;
     }
     IEnumerator WaitForMenuOpen()
     {
-        inAnimation = true;
-        AnimationClip currentClip = anim.GetCurrentAnimatorClipInfo(0)[0].clip;
+        waitingForAnimation = true;
+        AnimationClip currentClip = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
 
         yield return new WaitForSecondsRealtime(currentClip.length);
 
         resumeButton.Select();
-        inAnimation = false;
+        waitingForAnimation = false;
     }
 }

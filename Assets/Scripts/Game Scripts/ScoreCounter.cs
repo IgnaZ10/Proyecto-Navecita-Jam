@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    private float currentScore;
-    [SerializeField] private float pointsPerSecond;
+    public float currentScore { get; private set; }
 
     [Header("UI")]
     [SerializeField] Text scoreText;
@@ -18,7 +17,6 @@ public class ScoreCounter : MonoBehaviour
     {
         if (GameManager.Instance.gameIsPaused) return;
 
-        
         scoreText.text = "Score: " + Mathf.FloorToInt(currentScore);
 
         if (currentScore > scoreToVeryHard) GameManager.Instance.SetDifficulty(GameDifficulty.VeryHard);
@@ -30,6 +28,11 @@ public class ScoreCounter : MonoBehaviour
     public void AddScore(int value)
     {
         // Si se quiere añadir puntos extra (por destruir obstáculos, por ej.) usar esta función
+        
+        if (GameManager.Instance.gameIsOver) return;
+        if (GameManager.Instance.inGameIntro) return;
+        if (GameManager.Instance.gameIsPaused) return;
+
         currentScore += value;
     }
 }

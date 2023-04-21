@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpawnerObstacles : MonoBehaviour
 {
     public float tiempoMax = 1;
-    [SerializeField] float tiempoInic = 0;
+    [SerializeField] private float tiempoInic = 0;
     public float altura;
 
     [Header("Prefabs de obstáculos")]
@@ -13,20 +13,16 @@ public class SpawnerObstacles : MonoBehaviour
     [SerializeField] GameObject meteoritoHard;
     [SerializeField] GameObject meteoritoVeryHard;
 
-    void Start()
-    {
-        GameObject obstaculo = Instantiate(ObstaculoBasadoEnDificultad());
-        obstaculo.transform.position = transform.position + new Vector3(0, 0, 0);
-        Destroy(obstaculo, 3);
-    }
-
     void Update()
     {
+        // No spawnear obstáculos si se cumple alguna de estas condiciones:
+        if (GameManager.Instance.inGameIntro) return;
+        if (GameManager.Instance.gameIsPaused) return;
+        if (GameManager.Instance.gameIsOver) return;
+
         if (tiempoInic > tiempoMax)
         {
-            GameObject obstaculo = Instantiate(ObstaculoBasadoEnDificultad());
-            obstaculo.transform.position = transform.position + new Vector3(0, Random.Range(-altura,altura), 0);
-            Destroy(obstaculo, 10);
+            SpawnearObstaculo();
             tiempoInic = 0;
         }
         else
@@ -34,12 +30,18 @@ public class SpawnerObstacles : MonoBehaviour
             tiempoInic += Time.deltaTime;
         }
     }
-    private GameObject ObstaculoBasadoEnDificultad()
+    private void SpawnearObstaculo()
+    {
+        GameObject obstaculo = Instantiate(ObstaculoAleatorio()); // <------- Se puede cambiar a ObstaculoEspecificoADificultad()
+        obstaculo.transform.position = transform.position + new Vector3(0, Random.Range(-altura, altura), 0);
+        Destroy(obstaculo, 10);
+    }
+    private GameObject ObstaculoAleatorio()
     {
         int spawnTreshold = 10; // Chance de que aparezcan obstáculos dificiles (menor valor = menor chance).
         spawnTreshold += 10 * (int)GameManager.Instance.currentDificulty; // A mayor dificultad, se le suma más al número.
 
-        int randomNumber = Random.Range(0, ++spawnTreshold); // Se elige un número aleatorio entre 0 y spawnTreshold (++ para que incluya el máximo valor de spawnTreshold)
+        int randomNumber = Random.Range(0, spawnTreshold + 1); // Se elige un número aleatorio entre 0 y spawnTreshold
 
         // Finalmente se elige un obstáculo.
         // Por ejemplo: En la dificultad "Very Easy" sólo spawnea el meteoritoVeryEasy, ya que el número random sólo llega de 0 a 10,
@@ -49,5 +51,19 @@ public class SpawnerObstacles : MonoBehaviour
         else if (randomNumber > 20) return meteoritoMedium;
         else if (randomNumber > 10) return meteoritoEasy;
         else return meteoritoVeryEasy;
+    }
+    private GameObject ObstaculoEspecificoADificultad()
+    {
+        switch (GameManager.Instance.currentDificulty)
+        {
+            case GameDifficulty.VeryEasy: return meteoritoVeryEasy;
+            case GameDifficulty.Easy: return meteoritoEasy;
+            case GameDifficulty.Medium: return meteoritoMedium;
+            case GameDifficulty.Hard: return meteoritoHard;
+            case GameDifficulty.VeryHard: return meteoritoVeryHard;
+            default:
+                Debug.LogWarning("Dificultad: " + GameManager.Instance.currentDificulty + " no implementada en Spawner!");
+                return null;
+        }
     }
 }
