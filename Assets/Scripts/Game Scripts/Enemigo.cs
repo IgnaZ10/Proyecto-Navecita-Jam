@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
+    [SerializeField] AudioClip sfxDestroyed;
     // Start is called before the first frame update
     [SerializeField] public float vida;
     public int puntos = 10;
@@ -24,9 +25,9 @@ public class Enemigo : MonoBehaviour
     }
     public void Muerte() 
     {
-        Destroy(gameObject);
         scoreCounter.AddScore(puntos);
-        
+        SoundManager.Instance.PlaySound(sfxDestroyed);
+        Destroy(gameObject);
     }
     
 }

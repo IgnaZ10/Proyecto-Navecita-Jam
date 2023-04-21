@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 9008619361198306411, guid: 15645045a4ec37f4bbe00a62079efce7, type: 3}
   m_Color: {r: 1, g: 0.5, b: 0.5041323, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.0185714, y: 1.0442857}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -138,5 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747b2ef2f6b6f0143b4edd8a18819296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxDestroyed: {fileID: 8300000, guid: 733301106c652544f9c9a780673f5d9a, type: 3}
   vida: 60
   puntos: 20
