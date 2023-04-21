@@ -3506,9 +3506,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Artwork:<size= 28>\n - Diego D\xEDaz\n - Mateo Vicencio\n - Martina Hevilla\n</size>\nSound:<size=
-    28>\n - Luciano Ver\xF3n\n - Santiago Fernandez\n</size>\nProgramming:<size=
-    28>\n - Facundo Fuente\n - Ignacio Rodriguez\n - Guillermo Ramirez\n</size>"
+  m_Text: "Production:<size= 24.5>\n - Francisco Bru\n - Jonathan Caliccio\n</size>\nArtwork:<size=
+    24.5>\n - Diego D\xEDaz\n - Mateo Vicencio\n - Martina Hevilla\n - Daniela Rivero\n</size>\nSound:<size=
+    24.5>\n - Luciano Ver\xF3n\n - Santiago Fernandez\n</size>\nProgramming:<size=
+    24.5>\n - Facundo Fuente\n - Ignacio Rodriguez\n - Guillermo Ramirez\n</size>"
 --- !u!222 &1185660751
 CanvasRenderer:
   m_ObjectHideFlags: 0
