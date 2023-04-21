@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 118003384202796296}
   - component: {fileID: -2300153073729447164}
   - component: {fileID: -892458575600194990}
+  - component: {fileID: 1949420094819892385}
   m_Layer: 0
   m_Name: Meteorito_VeryEasy
   m_TagString: Enemigo
@@ -141,3 +142,23 @@ MonoBehaviour:
   sfxDestroyed: {fileID: 8300000, guid: 733301106c652544f9c9a780673f5d9a, type: 3}
   vida: 20
   puntos: 10
+--- !u!95 &1949420094819892385
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118003384202796303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17adeaefb18ffcd498180871307dd215, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
